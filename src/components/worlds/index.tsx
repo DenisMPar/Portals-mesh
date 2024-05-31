@@ -20,7 +20,7 @@ export function World({ texture, active, setActive, name, ...props }: Props) {
   const portalRef = useRef(null);
   const boxRef = useRef<any>();
   const mapLab = useTexture("/laboratory.jpg");
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     const worldActive = active === name;
     if (portalRef.current) {
       easing.damp(portalRef.current, "blend", worldActive ? 1 : 0, 0.2, delta);
